@@ -1,0 +1,3 @@
+- [ ] SEO
+- [ ] light/dark mode
+- [ ] media query css
