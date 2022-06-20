@@ -1,5 +1,3 @@
-import { getDisplayName } from "next/dist/shared/lib/utils";
-
 export default function TopBar() {
   return (
     <div className="flex justify-between items-center">
@@ -21,15 +19,14 @@ export default function TopBar() {
           </svg>
           <div>reddit</div>
         </div>
-        <input type="text" />
+        <form>
+          <input type="text" name="query" placeholder="Search me"
+            className="border-gray-600 rounded-md border-2 w-80 bg-gray-600 p-2" />
+        </form>
       </div>
-      <div className="flex justify-start items-center gap-2 mx-4 my-2">
-        <div>a</div>
-        <div>a</div>
-        <div>a</div>
-        <div>a</div>
-        <div>a</div>
-      </div>
+      <div>🍧</div>
+      <div>💀</div>
+      <div className="mx-4">💕</div>
     </div>
   );
 }
