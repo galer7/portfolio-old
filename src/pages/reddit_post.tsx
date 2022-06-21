@@ -1,9 +1,20 @@
+import { trpc } from "@/utils/trpc";
 import type { NextPage } from "next";
-import TopBar from "../components/reddit/TopBar";
+import TopBar from "@/components/reddit/TopBar";
 
 const Home: NextPage = () => {
+  const { data, isLoading } = trpc.useQuery([
+    "hello",
+    {
+      text: "Gabi",
+    },
+  ]);
+
+  if (isLoading) return <div>Loading...</div>;
+
   return (
     <>
+      <div>Data from TRPC: {data?.greeting}</div>
       <TopBar />
       <div className="flex justify-around gap-2 m-4">
         <div className="flex-grow-[4] flex-col">
