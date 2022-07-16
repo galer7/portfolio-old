@@ -3,33 +3,25 @@ import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <div>Portofolio - Gabriel Galer</div>
-      <Image
-        src="/pfp.webp"
-        alt="Me"
-        width={200}
-        height={200}
-        style={{ borderRadius: "50%" }}
-      />
-      <h2 style={{ alignSelf: "center" }}>{"That's me!"}</h2>
-      <h3>
-        Backend Dev @{" "}
-        <a href="https://www.instagram.com/explorado.ro/">Explorado</a>
-      </h3>
-      <p className="text-green-800">Tailwind is awsome!</p>
-      <div className="grid grid-cols-3">
-        <div>grid-element-1</div>
-        <div>grid-element-2</div>
-        <div>grid-element-3</div>
+    <main className="relative flex flex-col items-center w-full h-full text-center">
+      <div className="mt-8 mb-4">
+        <Image
+          src="/pfp.webp"
+          alt="Me"
+          width={200}
+          height={200}
+          className="rounded-full"
+        />
       </div>
-
-      <div className="flex">
-        <div>grid-element-1</div>
-        <div>grid-element-2</div>
-        <div>grid-element-3</div>
-      </div>
-    </div>
+      <h1>Gabriel Galer</h1>
+      <h4>I build scalable systems using Node.js</h4>
+      <h1 className="mt-10">Socials</h1>
+      <ul>
+        <li>Twitter</li>
+        <li>GitHub</li>
+        <li>LinkedIn</li>
+      </ul>
+    </main>
   );
 };
 
