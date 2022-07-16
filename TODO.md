@@ -1,3 +1,1 @@
-- [ ] SEO
-- [ ] light/dark mode
-- [ ] media query css
+- [ ] implement markdown pages
