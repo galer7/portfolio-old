@@ -1,10 +1,9 @@
-
 export default function TopBar() {
   return (
     <div className="flex justify-between items-center">
       <div className="flex justify-start items-center gap-2 mx-4 my-2">
         <div className="flex justify-center items-center gap-2 h-full">
-          {/* SVG neegs width set */}
+          {/* SVG needs width set */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-8"
@@ -21,8 +20,12 @@ export default function TopBar() {
           <div>reddit</div>
         </div>
         <form>
-          <input type="text" name="query" placeholder="Search me"
-            className="border-gray-600 rounded-md border-2 w-80 bg-gray-600 p-2" />
+          <input
+            type="text"
+            name="query"
+            placeholder="Search me"
+            className="border-gray-600 rounded-md border-2 w-80 bg-gray-600 p-2"
+          />
         </form>
       </div>
       <div>🍧</div>
