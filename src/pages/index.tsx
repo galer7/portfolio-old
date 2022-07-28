@@ -31,7 +31,7 @@ const Home: NextPage = () => {
         </li>
       </ul>
 
-      <p class="details">
+      <p>
         Built with{" "}
         <a target="_blank" href="https://nextjs.org">
           React
