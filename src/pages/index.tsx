@@ -33,11 +33,11 @@ const Home: NextPage = () => {
 
       <p>
         Built with{" "}
-        <a target="_blank" href="https://nextjs.org">
+        <a target="_blank" rel="noreferrer" href="https://nextjs.org">
           React
         </a>{" "}
         on{" "}
-        <a target="_blank" href="https://vercel.com">
+        <a target="_blank" rel="noreferrer" href="https://vercel.com">
           Vercel
         </a>
       </p>
