@@ -5,6 +5,7 @@ import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 const Home: NextPage = () => {
   return (
     <main className="relative flex flex-col items-center w-full h-full text-center">
+      <h2 className="mt-4">WIP 🚧🚧🚧</h2>
       <div className="mt-8 mb-4">
         <Image
           src="/pfp.webp"
@@ -21,26 +22,32 @@ const Home: NextPage = () => {
       <h1 className="mt-10">Socials</h1>
       <ul>
         <li>
-          <FaTwitter className="inline" /> Twitter
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://twitter.com/gabigaler7"
+          >
+            <FaTwitter className="inline mr-1" />
+            Twitter
+          </a>
         </li>
         <li>
-          <FaGithub className="inline" /> GitHub
+          <a target="_blank" rel="noreferrer" href="https://github.com/galer7">
+            <FaGithub className="inline mr-1" />
+            GitHub
+          </a>
         </li>
         <li>
-          <FaLinkedin className="inline" /> LinkedIn
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.linkedin.com/in/gabriel-galer-83098b163"
+          >
+            <FaLinkedin className="inline mr-1" />
+            Linkedin
+          </a>{" "}
         </li>
       </ul>
-
-      <p>
-        Built with{" "}
-        <a target="_blank" rel="noreferrer" href="https://nextjs.org">
-          React
-        </a>{" "}
-        on{" "}
-        <a target="_blank" rel="noreferrer" href="https://vercel.com">
-          Vercel
-        </a>
-      </p>
     </main>
   );
 };
