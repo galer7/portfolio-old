@@ -15,10 +15,8 @@ const Home: NextPage = () => {
           className="rounded-full"
         />
       </div>
-
       <h1>Gabriel Galer</h1>
       <h4>I build scalable systems using Node.js</h4>
-
       <h1 className="mt-10">Socials</h1>
       <ul>
         <li>
