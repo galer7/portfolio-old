@@ -22,10 +22,10 @@ export default function Home({ posts }: { posts: Post[] }) {
   return (
     <div className="mx-auto max-w-2xl py-16 text-center">
       <Head>
-        <title>Contentlayer Post Example</title>
+        <title>My posts</title>
       </Head>
 
-      <h1 className="mb-8 text-3xl font-bold">Contentlayer Post Example</h1>
+      <h1 className="mb-8 text-3xl font-bold">My posts</h1>
 
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />

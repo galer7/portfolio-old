@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 
 const Home: NextPage = () => {
   return (
     <main className="relative flex flex-col items-center w-full h-full text-center">
-      <h2 className="mt-4">WIP 🚧🚧🚧</h2>
       <div className="mt-8 mb-4">
         <Image
           src="/pfp.webp"
@@ -16,8 +16,19 @@ const Home: NextPage = () => {
         />
       </div>
       <h1>Gabriel Galer</h1>
+      <h3 className="italic">Software Engineer</h3>
+      <hr className="border-t-2 border-t-slate-50 w-1/6 my-2"></hr>
       <h4>I build scalable systems using Node.js</h4>
-      <h1 className="mt-10">Socials</h1>
+      <h4>
+        I also write{" "}
+        <Link href={"/posts"}>
+          <a className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">
+            posts
+          </a>
+        </Link>{" "}
+        sometimes
+      </h4>
+      <h1 className="mt-6">Socials</h1>
       <ul>
         <li>
           <a
