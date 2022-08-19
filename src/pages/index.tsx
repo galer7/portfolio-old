@@ -17,8 +17,8 @@ const Home: NextPage = () => {
       </div>
       <h1>Gabriel Galer</h1>
       <h3 className="italic">Software Engineer</h3>
-      <hr className="border-t-2 border-t-slate-50 w-1/6 my-2"></hr>
-      <h4>I build scalable systems using Node.js</h4>
+      <hr className="border-t-2 border-t-slate-50 w-1/4 my-2"></hr>
+      <h4>I build scalable systems using Node.js.</h4>
       <h4>
         I also write{" "}
         <Link href={"/posts"}>
@@ -26,9 +26,33 @@ const Home: NextPage = () => {
             posts
           </a>
         </Link>{" "}
-        sometimes
+        sometimes.
       </h4>
-      <h1 className="mt-6">Socials</h1>
+      <hr className="border-t-2 border-t-slate-50 w-1/4 my-2"></hr>
+
+      <h1>Latest projects</h1>
+      <ul className="w-1/4 list-disc list-inside">
+        <li>
+          <a
+            className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
+            target="_blank"
+            rel="noreferrer"
+            href="https://weat.galer7.com"
+          >
+            WEAT
+          </a>
+          . Collaborative layer on top of a food delivery service.{" "}
+          <Link href={"/posts/weat"}>
+            <a className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">
+              Read more...
+            </a>
+          </Link>{" "}
+        </li>
+      </ul>
+
+      <hr className="border-t-2 border-t-slate-50 w-1/4 my-2"></hr>
+
+      <h1>Socials</h1>
       <ul>
         <li>
           <a
