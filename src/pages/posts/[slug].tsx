@@ -18,9 +18,13 @@ export function getStaticPaths() {
 }
 
 const PostLayout = ({ post }: { post: Post }) => {
-  console.log(post.body.code);
-  const Component = useMDXComponent(post.body.code);
-  return <Component />;
+  const MDXComponent = useMDXComponent(post.body.code);
+  return (
+    <article className="mx-auto prose dark:prose-invert">
+      <h1>{post.title}</h1>
+      <MDXComponent />;
+    </article>
+  );
 };
 
 export default PostLayout;

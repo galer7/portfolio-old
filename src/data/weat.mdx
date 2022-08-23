@@ -1,0 +1,43 @@
+---
+title: "Development process of WEAT"
+publishedAt: "22.08.2022"
+description: "Development process of WEAT"
+cover: weat.png
+coverAlt: Homepage screen of the project
+---
+
+import TopBar from "@/components/reddit/TopBar";
+
+**🚧🚧🚧 Work In Progress 🚧🚧🚧**
+
+_WEAT is a modern app which aims to add a collaborative layer on top of food delivery services._
+
+<div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
+  <iframe
+    src="https://www.loom.com/embed/af321ba5b4404d5787703a6e01bb209e"
+    frameBorder={0}
+    webkitallowfullscreen=""
+    mozallowfullscreen=""
+    allowFullScreen=""
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+    }}
+  />
+</div>
+
+## 🧪 Tech stack
+
+For this project I've used Next.js and TailwindCSS for the front-end + server-side rendered pages, and Socket.IO for the backend, both types in TypeScript.
+The Next.js app is deployed on Vercel, while the WebSocket server is deployed on fly.io, using a simple multi-stage Dockerfile.
+
+## 🐾 First steps: Next.js app
+
+I've started this project with little to no experience in Next.js, React and/or TailwindCSS (pretty much anything frontend really).
+This is also the first project I've completed using TypeScript.
+
+When I've finished a first version Next.js project structure, I had two very large components, as I was using online `useState` variables, and since I was also using `useEffect` for receiving/transmitting WS messages, I didn't know how to maintain functionality after breaking into smaller components.
+After more reading in the React Beta Docs (specifically https://beta.reactjs.org/learn/extracting-state-logic-into-a-reducer, https://beta.reactjs.org/learn/passing-data-deeply-with-context and https://beta.reactjs.org/learn/scaling-up-with-reducer-and-context),

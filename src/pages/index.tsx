@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     <main className="relative flex flex-col items-center w-full h-full text-center">
       <div className="mt-8 mb-4">
         <Image
-          src="/pfp.webp"
+          src="/pfp.jfif"
           alt="Me"
           width={200}
           height={200}
@@ -20,13 +20,13 @@ const Home: NextPage = () => {
       <hr className="border-t-2 border-t-slate-50 w-1/4 my-2"></hr>
       <h4>I build scalable systems using Node.js.</h4>
       <h4>
-        I also write{" "}
+        I occasionally write{" "}
         <Link href={"/posts"}>
           <a className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">
             posts
           </a>
-        </Link>{" "}
-        sometimes.
+        </Link>
+        .
       </h4>
       <hr className="border-t-2 border-t-slate-50 w-1/4 my-2"></hr>
 
@@ -47,24 +47,6 @@ const Home: NextPage = () => {
               Read more...
             </a>
           </Link>
-          {/* <div
-            style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}
-          >
-            <iframe
-              src="https://www.loom.com/embed/af321ba5b4404d5787703a6e01bb209e"
-              frameBorder={0}
-              webkitallowfullscreen=""
-              mozallowfullscreen=""
-              allowFullScreen=""
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-              }}
-            />
-          </div> */}
         </li>
       </ul>
 
@@ -110,7 +92,11 @@ const Home: NextPage = () => {
           <h1>Resources</h1>
           <ul>
             <li>
-              <a target="_blank" rel="noreferrer" href="Galer_Gabriel_CV.pdf">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="/galer-gabriel-resume.pdf"
+              >
                 <FaFilePdf className="inline mr-1 text-white" />
                 Resume
               </a>
