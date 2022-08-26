@@ -2,6 +2,13 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import { allPosts } from "contentlayer/generated";
 import type { Post } from "contentlayer/generated";
 import { GetStaticProps } from "next";
+import Image from "@/components/Image";
+import Loom from "@/components/weat/Loom";
+
+const usedComponents = {
+  Image,
+  Loom,
+};
 
 export const getStaticProps: GetStaticProps = ({ params }) => {
   const post = allPosts.find(
@@ -22,7 +29,7 @@ const PostLayout = ({ post }: { post: Post }) => {
   return (
     <article className="mx-auto prose dark:prose-invert">
       <h1>{post.title}</h1>
-      <MDXComponent />;
+      <MDXComponent components={usedComponents} />
     </article>
   );
 };

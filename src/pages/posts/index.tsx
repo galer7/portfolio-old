@@ -10,7 +10,6 @@ export function getStaticProps() {
 const getPostLink = (post: Post) => `/posts/${post.slug}`;
 
 function PostCard(post: Post) {
-  console.log(`cover-images/${post.cover}`);
   return (
     <div className="mb-6">
       <h2 className="text-lg">
@@ -19,8 +18,8 @@ function PostCard(post: Post) {
             {post.cover && (
               <div className="relative h-32 w-full max-w-xs">
                 <Image
-                  src={`/cover-images/${post.cover}`}
-                  alt={"Image with green fields in nature"}
+                  src={`/${post.slug}/${post.cover}`}
+                  alt={post.coverAlt}
                   layout="fill"
                   objectFit="scale-down"
                 />
