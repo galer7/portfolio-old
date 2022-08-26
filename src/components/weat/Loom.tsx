@@ -4,9 +4,6 @@ export default function Loom() {
       <iframe
         src="https://www.loom.com/embed/af321ba5b4404d5787703a6e01bb209e"
         frameBorder={0}
-        webkitallowfullscreen=""
-        mozallowfullscreen=""
-        allowFullScreen=""
         style={{
           position: "absolute",
           top: 0,
