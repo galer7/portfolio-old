@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     <main className="relative flex flex-col items-center w-full h-full text-center">
       <div className="mt-8 mb-4">
         <Image
-          src="/pfp.jfif"
+          src="/pfp.webp"
           alt="Me"
           width={200}
           height={200}
