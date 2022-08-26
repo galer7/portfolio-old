@@ -1,7 +1,7 @@
 import NextImage from "next/image";
 import Link from "next/link";
 
-export default function ({ src, h }: { src: string; h: string }) {
+export default function Image({ src, h }: { src: string; h: string }) {
   return (
     <Link href={src}>
       <a target="_blank">
