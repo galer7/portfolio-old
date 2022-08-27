@@ -20,7 +20,7 @@ The idea behind WEAT is for users to be matched against people that are close to
 
 # 🧫 Tech Stack
 
-<Image src="/weat/weat-arch.png" h="h-64"/>
+<Image src="/weat/weat-arch.png" h="h-96"/>
 
 For the frontend, I've used Next.js as the main framework, using TRPC for quick API routes and TailwindCSS for styling.
 As the authentication is made using session cookies, I've utilized Next.js' SSR when calling `getServerSideSession` so that the client doesn't have to make another request for his session data. Other than that, the client application is mostly an SPA.

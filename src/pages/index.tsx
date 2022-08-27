@@ -25,8 +25,8 @@ const Home: NextPage = () => {
           <a className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">
             posts
           </a>
-        </Link>
-        .
+        </Link>{" "}
+        about my latest projects.
       </h4>
       <hr className="border-t-2 border-t-slate-50 w-1/4 my-2"></hr>
 
@@ -95,7 +95,7 @@ const Home: NextPage = () => {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="/galer-gabriel-resume.pdf"
+                href="/gabriel-galer-resume.pdf"
               >
                 <FaFilePdf className="inline mr-1 text-white" />
                 Resume
