@@ -1,54 +1,54 @@
 ---
 title: "Development process of WEAT"
 publishedAt: "22.08.2022"
-description: "Development process of WEAT"
+description: "The development process of WEAT"
 cover: weat.png
 coverAlt: Homepage screen of the project
 ---
 
 <Loom />
 
-_WEAT is a modern app which aims to add a collaborative layer on top of food delivery services._
+_WEAT is a modern app that aims to add a collaborative layer on top of food delivery services._
 
 Demo: <a href="https://weat.galer7.com" target="_blank">weat.galer7.com</a>,
 code: <a href="https://github.com/galer7/weat" target="_blank">Client</a> & <a href="https://github.com/galer7/weat-ws" target="_blank">WS Server</a>
 
 # Why?
 
-Nowadays, food delivery apps set a pretty high minimum price per order, thus forcing clients to order excessive amount of food just to cross the "free delivery" line. This can only conclude in food being thrown away, consumers getting fat and money being wasted.
-The idea behind WEAT is for users to be matched against people that are close to them and have similar culinary preferences. A delivery address would be set somewhere in the middle of the group of users' addresses, so that it saves time for all of them. Also, less packaging would be wasted, as there would be just one large order.
+Nowadays, food delivery apps set a pretty high minimum price per order, thus forcing clients to order an excessive amount of food just to cross the "free delivery" line. This can only conclude in food being thrown away, consumers getting fat, and money being wasted.
+The idea behind WEAT is for users to be matched against people that are close to them and have similar culinary preferences. A delivery address would be set somewhere in the middle of the group of users' addresses so that it saves time for all of them. Also, less packaging would be wasted, as there would be just one large order.
 
 # 🧫 Tech Stack
 
 <Image src="/weat/weat-arch.png" h="h-96" alt="Diagram of the application's architecture"/>
 
 For the frontend, I've used Next.js as the main framework, using TRPC for quick API routes and TailwindCSS for styling.
-As the authentication is made using session cookies, I've utilized Next.js' SSR when calling `getServerSideSession` so that the client doesn't have to make another request for his session data. Other than that, the client application is mostly an SPA.
+As the authentication is made using session cookies, I've utilized Next.js' SSR when calling `getServerSideSession` so that the client doesn't have to make another request for his session data. Other than that, the client application is mostly a SPA.
 
-For the backend, I've used Socket.IO for maintaining the WebSocket connections. The server would listen to events like `user:invite:sent`, `user:invite:accepted`, and would emit events like `server:invite:sent`, `server:state:updated` etc.
-On each client event, the session token is also sent, and the WS server can authorize client actions regarding group state.
+For the backend, I've used Socket.IO for maintaining the WebSocket connections. The server would listen to events like `user:invite:sent`, `user:invite:accepted`, and would emit events like `server:invite:sent`, `server:state:updated`, etc.
+On each client event, the session token is also sent, and the WS server can authorize client actions regarding the group state.
 
-As for the database, I've went with a DBaaS called Planetscale, which uses MySQL together with Vitess in order to scale. The ORM is handled using Prisma, and the setup was really easy.
+As for the database, I've picked a DBaaS called Planetscale, which uses MySQL together with Vitess in order to scale. The ORM is handled using Prisma, and the setup was really easy.
 
-Deployment were done on Vercel's edge network and on Fly.io's Dockerfile builder. Two deployment services were necessary because of Vercel's serverless functions having a maximum execution timeout, so they can't maintain a WS connection.
+Deployments were done on Vercel's edge network and Fly.io's Dockerfile builder. Two deployment services were necessary because of Vercel's serverless functions having a maximum execution timeout, so they can't maintain a WS connection.
 
 # 👥 Development Problems
 
-I've mostly gathered the React, Next.js and CSS used in this project in the last 2 months or so, but things could've gone way smoother. Here are some problems I've encountered during the development process:
+I've mostly gathered the React, Next.js, and CSS used in this project in the last 2 months or so, but things could've gone way smoother. Here are some problems I've encountered during the development process:
 
 ## Not knowing about `useReducer` and contexts from the start
 
-While using `useEffect` to listen to WS server events for client state updating, I was still using prop drilling a lot. That resulted in having 2 massive 500+ LoC components, having a lot of `useState` variables and hating life.
-`useReducer` helped me move the entire logic for group state to its separate context, and I've repeated that for each separate piece of state: invitations, notifications, socket and logged user state.
+While using `useEffect` to listen to WS server events for client state updating, I was still using prop drilling a lot. That resulted in having 2 massive 500+ LoC components, having a lot of `useState` variables, and hating the project state.
+`useReducer` helped me move the entire logic for group state to its separate context, and I've repeated that for each separate piece of state: invitations, notifications, socket, and logged user state.
 
 ## `useEffect` on the entire group state object
 
 
-The last feature I've added was the CSS blurring effect while a food item's image is loading. This works using multiple `useState` variable for each user selected food item.
+The last feature I've added was the CSS blurring effect while a food item's image is loading. This works using multiple `useState` variables for each user-selected food item.
 
 <Image src="/weat/selected-food-items-type.png" h="h-96" alt="Type of the selected food item"/>
 
-This was a bad idea, since the `useEffect` in the `/food` page emits on each state change coming from the logged user. Having added these new variables that are in charge of the blurring effect,
+This was a bad idea since the `useEffect` in the `/food` page emits on each state change coming from the logged user. Having added these new variables that are in charge of the blurring effect,
 the socket now emits once when the item was added AND after the image is done loading. So, the order would be:
 1. Click `Add Food` button -> `isImageLoading` set to `true`, `useEffect` emits with `socket.emit()`
 2. Image is done loading, `isImageLoading` is set to `false`
@@ -61,16 +61,16 @@ So, this blurring effect must be treated separately from the state.
 
 The food images are gathered from a <a href="https://www.themealdb.com/" target="_blank">public API</a> through a TRPC route and *NOT* by using Next'js `getStaticProps`.
 
-Why? Well, the page in which I wanted to fetch the image sources was already using `getServerSideProps`, so I had to come up with another solution.
-First, I've come with a static number of images per restaurant, let's say 5 images for each restaurant and 5 restaurants. That's 25 requests for obtaining 25 image sources.
+Why? Well, the page on which I wanted to fetch the image sources were already using `getServerSideProps`, so I had to come up with another solution.
+First, I've come up with a static number of images per restaurant, let's say 5 images for each restaurant and 5 restaurants. That's 25 requests for obtaining 25 image sources.
 TRPC uses React Query behind the scene, so we can cache this query.
 The final solution sounds like this:
 1. Write TRPC query which consists of 25 parallel requests to a 3rd API
 2. When calling `useQuery`, pass `{ staleTime: Infinity }` as React Query options, so that it never re-queries again.
 3. In-memory cache the result on the Next.js HTTP server using <a href="https://www.npmjs.com/package/memory-cache" target="_blank">`memory-cache`</a>
-4. When response is send to the client, attach a `Cache-Control` HTTP header so that the browser can save the contents.
+4. When a response is sent to the client, attach a `Cache-Control` HTTP header so that the browser can save the contents.
 
-The only thing that could've be done different was step 3 and 4, where we could attach <a href="https://vercel.com/docs/concepts/edge-network/caching#stale-while-revalidate" target="_blank">another header</a> so that Vercel knows to cache that response. And that cache would serve for all future users hitting that resource address.
+The only thing that could've been done differently was steps 3 and 4, where we could attach <a href="https://vercel.com/docs/concepts/edge-network/caching#stale-while-revalidate" target="_blank">another header</a> so that Vercel knows to cache that response. And that cache would serve for all future users hitting that resource address.
 
 ## Conclusions
 
