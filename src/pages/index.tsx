@@ -1,3 +1,4 @@
+import HorizontalLine from "@/components/HorizontalLine";
 import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,7 +18,9 @@ const Home: NextPage = () => {
       </div>
       <h1>Gabriel Galer</h1>
       <h3 className="italic">Software Engineer</h3>
-      <hr className="border-t-2 border-t-slate-50 w-1/4 my-2"></hr>
+
+      <HorizontalLine />
+
       <h4>I build scalable systems using Node.js.</h4>
       <h4>
         I occasionally write{" "}
@@ -28,7 +31,8 @@ const Home: NextPage = () => {
         </Link>{" "}
         about my latest projects.
       </h4>
-      <hr className="border-t-2 border-t-slate-50 w-1/4 my-2"></hr>
+
+      <HorizontalLine />
 
       <h1>Latest projects</h1>
       <ul className="w-1/4 list-disc list-inside">
@@ -50,9 +54,9 @@ const Home: NextPage = () => {
         </li>
       </ul>
 
-      <hr className="border-t-2 border-t-slate-50 w-1/4 my-2"></hr>
+      <HorizontalLine />
 
-      <div className="flex justify-evenly w-1/4">
+      <div className="flex justify-evenly w-1/4 gap-6">
         <div>
           <h1>Socials</h1>
           <ul>
