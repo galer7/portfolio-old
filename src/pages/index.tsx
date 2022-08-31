@@ -87,7 +87,7 @@ const Home: NextPage = () => {
                 href="https://www.linkedin.com/in/gabriel-galer-83098b163"
               >
                 <FaLinkedin className="inline mr-1" />
-                Linkedin
+                LinkedIn
               </a>
             </li>
           </ul>
