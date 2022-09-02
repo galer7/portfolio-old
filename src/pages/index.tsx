@@ -35,7 +35,20 @@ const Home: NextPage = () => {
       <HorizontalLine />
 
       <h1>Latest projects</h1>
-      <ul className="w-1/4 list-disc list-inside">
+      <ul className="pl-10 w-1/4 list-disc list-outside text-left">
+        <li className="pl-0">
+          🚧 <span className="italic">Work in progress: </span>
+          <a
+            className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/galer7/eventify"
+          >
+            eventify
+          </a>
+          . Remind users of subscribed event using scheduled emails and SMS
+          notifications.
+        </li>
         <li>
           <a
             className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
