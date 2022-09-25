@@ -5,22 +5,22 @@ export default function Layout({ children }: { children?: React.ReactNode }) {
   const GradientBackground = () => {
     return (
       <>
-        <div className="pointer-events-none absolute inset-0 left-[20%] overflow-hidden -z-10">
+        <div className="pointer-events-none fixed inset-0 left-[18%] overflow-hidden -z-10 w-[500px] h-[500px] lg:w-[700px] lg:h-[700px]">
           <Image
             src="/gradients/gradient1.png"
             alt="First gradient"
-            className="bg-no-repeat will-change-transform w-[500px] h-[500px]"
-            height={500}
-            width={500}
+            className="bg-no-repeat will-change-transform overflow-hidden"
+            layout="fill"
+            objectFit="cover"
           />
         </div>
-        <div className="pointer-events-none absolute inset-0 left-1/2 top-1/3 overflow-hidden -z-10">
+        <div className="pointer-events-none fixed inset-0 left-[42%] top-1/3 overflow-hidden -z-10  w-[500px] h-[500px] lg:w-[700px] lg:h-[700px]">
           <Image
             src="/gradients/gradient2.png"
             alt="First gradient"
-            className="bg-no-repeat will-change-transform w-[500px] h-[500px]"
-            height={500}
-            width={500}
+            className="bg-no-repeat will-change-transform overflow-hidden"
+            layout="fill"
+            objectFit="cover"
           />
         </div>
       </>
