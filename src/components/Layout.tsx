@@ -5,7 +5,7 @@ export default function Layout({ children }: { children?: React.ReactNode }) {
   const GradientBackground = () => {
     return (
       <>
-        <div className="pointer-events-none fixed inset-0 left-[18%] overflow-hidden -z-10 w-[500px] h-[500px] lg:w-[700px] lg:h-[700px]">
+        <div className="pointer-events-none fixed inset-0 lg:left-[18%] overflow-hidden -z-10 w-full h-full lg:w-[700px] lg:h-[700px]">
           <Image
             src="/gradients/gradient1.png"
             alt="First gradient"
@@ -14,7 +14,7 @@ export default function Layout({ children }: { children?: React.ReactNode }) {
             objectFit="cover"
           />
         </div>
-        <div className="pointer-events-none fixed inset-0 left-[42%] top-1/3 overflow-hidden -z-10  w-[500px] h-[500px] lg:w-[700px] lg:h-[700px]">
+        <div className="pointer-events-none fixed inset-0 lg:left-[42%] top-1/3 overflow-hidden -z-10 w-full h-full lg:w-[700px] lg:h-[700px]">
           <Image
             src="/gradients/gradient2.png"
             alt="First gradient"
@@ -30,7 +30,7 @@ export default function Layout({ children }: { children?: React.ReactNode }) {
   return (
     <>
       <svg
-        className="pointer-events-none fixed isolate z-50 opacity-70 mix-blend-soft-light"
+        className="pointer-events-none fixed isolate z-50 opacity-99 mix-blend-soft-light"
         width="100%"
         height="100%"
       >
