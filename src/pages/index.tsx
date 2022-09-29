@@ -10,8 +10,8 @@ const Redesign: NextPage = () => {
     <>
       <Layout>
         <GlassmorphismCard>
-          <div className="grid grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-x-6 w-full h-full text-black">
-            <div className="md:row-start-1 md:row-end-2 text-center self-end md:-mr-10">
+          <div className="grid grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-x-6 gap-y-6  h-full text-black my-6 mx-10">
+            <div className="md:row-start-1 md:row-end-2 text-center self-end">
               <Image
                 src="/pfp.webp"
                 alt="A photo of me 😄"
@@ -22,7 +22,7 @@ const Redesign: NextPage = () => {
               />
             </div>
 
-            <div className="md:row-start-2 md:row-end-3 text-center md:-mr-10">
+            <div className="md:row-start-2 md:row-end-3 text-center">
               <h1 className="font-yeseva text-2xl">Gabriel Galer</h1>
               <h3 className="italic font-serif">Software Engineer</h3>
             </div>
