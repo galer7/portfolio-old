@@ -9,16 +9,16 @@ export default function Layout({ children }: { children?: React.ReactNode }) {
           <Image
             src="/gradients/gradient1.png"
             alt="First gradient"
-            className="bg-no-repeat will-change-transform overflow-hidden h-32"
+            className="bg-no-repeat overflow-hidden h-32"
             layout="fill"
             objectFit="contain"
           />
         </div>
-        <div className="pointer-events-none fixed inset-0 lg:left-[42%] top-1/3 overflow-hidden -z-10 lg:w-[700px] lg:h-[700px] animate-pulse offset-1s">
+        <div className="pointer-events-none fixed inset-0 top-1/3 lg:left-[42%] overflow-hidden -z-10 lg:w-[700px] lg:h-[700px] animate-pulse offset-1s">
           <Image
             src="/gradients/gradient2.png"
             alt="Second gradient"
-            className="bg-no-repeat will-change-transform overflow-hidden h-32"
+            className="bg-no-repeat overflow-hidden h-32"
             layout="fill"
             objectFit="contain"
           />
