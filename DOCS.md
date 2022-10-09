@@ -17,12 +17,19 @@
     let element1 = document.querySelector('.element');
     element1.addEventListener('resize', function () {
         if (window.innerWidth > 568) {
-            ...execute script
+            // execute script
         }
     });
   ```
+
+## Tailwind
+- use `group-*`, `peer-*` for parent and/or sibling state conditions [link](https://tailwindcss.com/docs/hover-focus-and-other-states)
+- don't extract in a component yet: [link](https://tailwindcss.com/docs/reusing-styles#loops)
+- tailwind's arbitrary variants feature: [link](https://tailwindcss.com/docs/hover-focus-and-other-states#using-arbitrary-variants)
+  - SO comment explaining syntax: [link](https://stackoverflow.com/a/73667926)
+
 ## Design
-- first create the design, then implement it. These are 2 different mindsets
+- first, create the design, then implement it. These are 2 different mindsets
 
 ## HTML
-- start using `<p>`, `<span>`
+- [absolute, relative and fixed](https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/)
