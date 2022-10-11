@@ -10,7 +10,7 @@ const Redesign: NextPage = () => {
     <>
       <Layout>
         <GlassmorphismCard>
-          <div className="grid grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-x-6 gap-y-6  h-full text-black my-6 mx-10">
+          <div className="grid grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-x-6 gap-y-6 h-full text-black my-6 mx-10">
             <div className="md:row-start-1 md:row-end-2 text-center self-end">
               <Image
                 src="/pfp.webp"
