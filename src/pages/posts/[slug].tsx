@@ -27,7 +27,7 @@ export function getStaticPaths() {
 const PostLayout = ({ post }: { post: Post }) => {
   const MDXComponent = useMDXComponent(post.body.code);
   return (
-    <article className="mx-auto prose dark:prose-invert w-screen">
+    <article className="mx-auto prose dark:prose-invert w-full">
       <h1>{post.title}</h1>
       <MDXComponent components={usedComponents} />
     </article>
