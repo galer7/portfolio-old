@@ -4,7 +4,7 @@
 - [DesignCourse: From Prototype UI Design to HTML, CSS & JS Tutorial
 ](https://www.youtube.com/watch?v=GTyMUjhA-o4)
 ## CSS
-- when adding margin to child element moves the parent, use `overflow: hidden;` on the parent: [SO link](https://stackoverflow.com/questions/1762539/margin-on-child-element-moves-parent-element)
+- when adding margin to a child element, it moves the parent. use `overflow: hidden;` on the parent: [SO link](https://stackoverflow.com/questions/1762539/margin-on-child-element-moves-parent-element)
 - setting fractions of screen size for the element's width/height can create conflict with `max-height/width` properties. Better use the latter, then see if you need anything extra
 - tailwind's (initial) breakpoints care only about widths, not heights
 - DO MOBILE FIRST
@@ -26,6 +26,7 @@
 - use `group-*`, `peer-*` for parent and/or sibling state conditions [link](https://tailwindcss.com/docs/hover-focus-and-other-states)
 - don't extract in a component yet: [link](https://tailwindcss.com/docs/reusing-styles#loops)
 - tailwind's arbitrary variants feature: [link](https://tailwindcss.com/docs/hover-focus-and-other-states#using-arbitrary-variants)
+  - `&>*` and stuff like that
   - SO comment explaining syntax: [link](https://stackoverflow.com/a/73667926)
 
 ## Design
