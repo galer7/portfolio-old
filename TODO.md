@@ -1,3 +1,0 @@
-- [x] implement markdown pages
-- [ ] landing page
-- [ ] bio burb
